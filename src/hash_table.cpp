@@ -18,20 +18,16 @@ void ht_hash_table::insert(const std::string& key, const std::string& value) {
     ht_item* new_item = new ht_item(key, value);
     int index = ht_get_hash(new_item->key, this->size, 0);
     ht_item* curr_item = hash_table[index];
-
-    // If the slot is empty, insert the new item
     if (curr_item == NULL) {
         hash_table[index] = new_item;
         count++;
     } else {
-        // If the slot is occupied, try to find an empty slot
         int i = 1;
         while (curr_item != NULL) {
             index = ht_get_hash(new_item->key, this->size, i);
             curr_item = hash_table[index];
             i++;
         }
-        // Insert the new item
         hash_table[index] = new_item;
         count++;
     }
