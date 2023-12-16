@@ -4,13 +4,14 @@
 #include <iostream>
 #include <string>
 
-using std::cin, std::string, fmt::print;
+using std::string, fmt::print;
 
 int main() {
     ht_hash_table hash_table;
-    hash_table.insert("hello", "world");
-    hash_table.insert("hi", "Mushashi");
-    hash_table.insert("hi", "Mob");
-    print("{}\n", hash_table.search("hi"));
+    hash_table.insert("Hello", "World");
+    hash_table.insert("Hi", "Mushashi");
+    hash_table.insert("Hi", "Mob");
+    hash_table.remove("Hi");
+    print("{}\n", hash_table.search("Hi"));
     return 0;
 }

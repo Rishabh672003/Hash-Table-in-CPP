@@ -20,7 +20,7 @@ void ht_hash_table::insert(const std::string& key, const std::string& value) {
     ht_item* curr_item = hash_table[index];
     if (curr_item == NULL) {
         hash_table[index] = new_item;
-        count++;
+        this->count++;
     } else {
         int i = 1;
         while (curr_item != NULL) {
@@ -34,7 +34,7 @@ void ht_hash_table::insert(const std::string& key, const std::string& value) {
             i++;
         }
         hash_table[index] = new_item;
-        count++;
+        this->count++;
     }
 }
 
