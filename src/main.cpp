@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-using std::cin, std::endl, std::string, fmt::print;
+using std::cin, std::string, fmt::print;
 
 int main() {
     ht_hash_table hash_table;
