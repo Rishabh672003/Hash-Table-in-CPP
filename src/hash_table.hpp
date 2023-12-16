@@ -27,9 +27,9 @@ class ht_hash_table {
     void insert(const std::string& k, const std::string& v);
     std::string search(const std::string& key);
     void remove(const std::string& key);
-    std::vector<ht_item*> getHashTable() const;
 
   private:
+    std::vector<ht_item*> getHashTable() const;
     int hash(const std::string& s, const int a, const int b);
     int ht_get_hash(const std::string& s, const int num_buckets,
                     const int attempts);

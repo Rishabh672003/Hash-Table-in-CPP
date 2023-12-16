@@ -1,6 +1,7 @@
-#include "hash_table.hpp"
 #define HT_PRIME_1 151
 #define HT_PRIME_2 173
+
+#include "hash_table.hpp"
 
 #include <cmath>
 #include <vector>
