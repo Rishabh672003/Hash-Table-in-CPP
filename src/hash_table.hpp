@@ -22,6 +22,7 @@ class ht_hash_table {
   public:
     explicit ht_hash_table(int size = 53);
     virtual ~ht_hash_table();
+
     // Hash table API
     void insert(const std::string& k, const std::string& v);
     std::string search(const std::string& key);

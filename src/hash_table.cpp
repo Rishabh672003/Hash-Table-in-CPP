@@ -9,7 +9,7 @@ ht_hash_table::ht_hash_table(int size) : size(size) {
     hash_table.reserve(size);
 }
 ht_hash_table::~ht_hash_table() {
-    for (int i = 0; i < hash_table.size(); i++) {
+    for (std::vector<ht_item*>::size_type i = 0; i < hash_table.size(); i++) {
         delete hash_table[i];
     }
 }
