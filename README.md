@@ -9,6 +9,7 @@ ht_hash_table hash_table;
 hash_table.insert("hello", "world");
 hash_table.insert("hi", "Rishabh");
 print("{}\n", hash_table.search("hi"));
+hash_table.remove("hi");
 ```
 
 ## Credit
