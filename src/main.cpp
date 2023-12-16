@@ -10,6 +10,7 @@ int main() {
     ht_hash_table hash_table;
     hash_table.insert("hello", "world");
     hash_table.insert("hi", "Rishabh");
+    hash_table.remove("hi");
     print("{}\n", hash_table.search("hi"));
     return 0;
 }

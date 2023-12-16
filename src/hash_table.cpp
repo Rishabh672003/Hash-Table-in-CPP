@@ -48,6 +48,22 @@ std::string ht_hash_table::search(const std::string& key) {
     return "Key not found";
 }
 
+void ht_hash_table::remove(const std::string& key) {
+
+    int index = ht_get_hash(key, this->size, 0);
+    ht_item* item = hash_table[index];
+    int i = 1;
+    while (item != NULL) {
+        if (item->key == key) {
+            delete hash_table[index];
+        }
+        index = ht_get_hash(key, this->size, i);
+        item = hash_table[index];
+        i++;
+    }
+    this->count--;
+}
+
 std::vector<ht_item*> ht_hash_table::getHashTable() const { return hash_table; }
 
 int ht_hash_table::hash(const std::string& s, const int a, const int m) {
