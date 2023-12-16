@@ -24,6 +24,11 @@ void ht_hash_table::insert(const std::string& key, const std::string& value) {
     } else {
         int i = 1;
         while (curr_item != NULL) {
+            if (curr_item->key == key) {
+                delete curr_item;
+                hash_table[index] = new_item;
+                return;
+            }
             index = ht_get_hash(new_item->key, this->size, i);
             curr_item = hash_table[index];
             i++;
