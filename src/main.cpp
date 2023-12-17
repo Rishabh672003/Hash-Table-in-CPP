@@ -1,8 +1,5 @@
 #include "hash_table.hpp"
-#include <algorithm>
 #include <fmt/core.h>
-#include <iostream>
-#include <string>
 
 using std::string, fmt::print;
 
