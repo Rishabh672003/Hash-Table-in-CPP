@@ -1,5 +1,5 @@
-#define HT_PRIME_1 151
-#define HT_PRIME_2 173
+#define HT_PRIME_1 65'537
+#define HT_PRIME_2 14'657
 
 #include "hash_table.hpp"
 
@@ -7,7 +7,7 @@
 #include <cmath>
 #include <vector>
 
-ht_hash_table::ht_hash_table(const int size) : size(size) {
+ht_hash_table::ht_hash_table(int size) : size(size) {
     hash_table.reserve(size);
     std::fill(hash_table.begin(), hash_table.begin() + size, nullptr);
 }
@@ -83,7 +83,7 @@ void ht_hash_table::remove(const std::string& key) {
 std::vector<ht_item*> ht_hash_table::getHashTable() const { return hash_table; }
 
 constexpr int ht_hash_table::hash(const std::string& s, const int a,
-                              const int m) const {
+                                  const int m) const {
     long hash = 0;
     const int len_s = s.size();
     for (int i = 0; i < len_s; i++) {
@@ -94,8 +94,8 @@ constexpr int ht_hash_table::hash(const std::string& s, const int a,
 }
 
 constexpr int ht_hash_table::ht_get_hash(const std::string& s,
-                                     const int num_buckets,
-                                     const int attempts) const {
+                                         const int num_buckets,
+                                         const int attempts) const {
     const int hash_a = hash(s, HT_PRIME_1, num_buckets);
     const int hash_b = hash(s, HT_PRIME_2, num_buckets);
     return (hash_a + (attempts * (hash_b + 1))) % num_buckets;
