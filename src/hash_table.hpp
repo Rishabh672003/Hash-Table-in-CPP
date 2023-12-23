@@ -30,9 +30,9 @@ class ht_hash_table {
 
   private:
     std::vector<ht_item*> getHashTable() const;
-    int hash(const std::string& s, const int a, const int b);
-    int ht_get_hash(const std::string& s, const int num_buckets,
-                    const int attempts);
+    constexpr int hash(const std::string& s, const int a, const int b) const;
+    constexpr int ht_get_hash(const std::string& s, const int num_buckets,
+                    const int attempts) const;
 };
 
 #endif
