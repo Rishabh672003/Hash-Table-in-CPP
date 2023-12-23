@@ -1,0 +1,26 @@
+name: Cmake CI
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Build and load Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: rishabh100/cpp-project:latest
+      - name: Run Docker container
+        run: docker run --rm rishabh100/cpp-project:latest

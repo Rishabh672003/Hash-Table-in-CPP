@@ -7,7 +7,7 @@
 #include <cmath>
 #include <vector>
 
-ht_hash_table::ht_hash_table(int size) : size(size) {
+ht_hash_table::ht_hash_table(const int size) : size(size) {
     hash_table.reserve(size);
     std::fill(hash_table.begin(), hash_table.begin() + size, nullptr);
 }

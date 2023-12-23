@@ -15,12 +15,12 @@ class ht_item {
 
 class ht_hash_table {
   public:
-    int size = 53;
+    const int size = 53;
     int count = 0;
     std::vector<ht_item*> hash_table;
 
   public:
-    explicit ht_hash_table(int size = 53);
+    explicit ht_hash_table(const int size = 53);
     virtual ~ht_hash_table();
 
     // Hash table API
