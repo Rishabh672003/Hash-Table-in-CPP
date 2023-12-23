@@ -22,5 +22,3 @@ jobs:
           context: .
           load: true
           tags: rishabh100/cpp-project:latest
-      - name: Run Docker container
-        run: docker run --rm rishabh100/cpp-project:latest
