@@ -3,7 +3,6 @@
 
 #include "hash_table.hpp"
 
-#include <algorithm>
 #include <cmath>
 #include <vector>
 
